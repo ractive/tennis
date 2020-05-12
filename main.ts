@@ -634,7 +634,24 @@ let mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
+let mySprite2 = sprites.create(img`
+. f f f f . 
+f d 5 5 d f 
+f 5 d d 5 f 
+f 5 5 5 5 f 
+f 5 d d 5 f 
+. f f f f . 
+`, SpriteKind.Player)
+let ballShadow = sprites.create(img`
+. . . . . . 
+. . . . . . 
+. . . . . . 
+. f f f f . 
+f f f f f f 
+. f f f f . 
+`, SpriteKind.Player)
 mySprite.setFlag(SpriteFlag.StayInScreen, false)
+ballShadow.y += 20
 controller.moveSprite(mySprite)
 scene.cameraFollowSprite(mySprite)
 scene.setBackgroundColor(7)
@@ -657,4 +674,4 @@ tiles.setTilemap(tiles.createTilemap(
             [myTiles.tile0,sprites.castle.tileGrass2,sprites.builtin.crowd1,sprites.builtin.crowd2,sprites.builtin.crowd0,sprites.builtin.crowd3,sprites.builtin.crowd4,sprites.builtin.crowd5,sprites.builtin.crowd6,sprites.builtin.crowd7,sprites.builtin.crowd8,sprites.builtin.crowd9,sprites.builtin.field0,sprites.dungeon.greenOuterNorthWest,sprites.dungeon.greenOuterNorth0,sprites.dungeon.greenOuterNorth1,sprites.dungeon.greenOuterNorthEast,sprites.dungeon.greenOuterEast0,sprites.dungeon.greenOuterSouthWest,sprites.dungeon.greenOuterEast1,sprites.dungeon.greenOuterNorth2,sprites.dungeon.greenOuterSouth1,sprites.dungeon.greenOuterSouthEast,sprites.dungeon.greenOuterWest1,sprites.dungeon.greenOuterWest0,sprites.dungeon.greenOuterSouth0,sprites.dungeon.floorDark0,myTiles.tile2,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile12,myTiles.tile13,myTiles.tile14,myTiles.tile15,myTiles.tile16,myTiles.tile17,myTiles.tile18,myTiles.tile19,myTiles.tile20,myTiles.tile21,myTiles.tile22,myTiles.tile23,myTiles.tile24,myTiles.tile25,myTiles.tile26,myTiles.tile27,myTiles.tile28,myTiles.tile29,myTiles.tile30,myTiles.tile31,myTiles.tile32,myTiles.tile33],
             TileScale.Sixteen
         ))
-tiles.placeOnTile(mySprite, tiles.getTileLocation(5, 7))
+tiles.placeOnTile(mySprite, tiles.getTileLocation(5, 5))
