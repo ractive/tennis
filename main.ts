@@ -881,8 +881,11 @@ let ballShadow = sprites.create(img`
 f f f f f f 
 . f f f f . 
 `, SpriteKind.Player)
-mySprite.setFlag(SpriteFlag.StayInScreen, false)
-ballShadow.y += 20
+mySprite.setFlag(SpriteFlag.StayInScreen, true)
+ball.y = 150
+ballShadow.y = 200
+ballShadow.setFlag(SpriteFlag.Ghost, true)
+ball.setFlag(SpriteFlag.Ghost, true)
 controller.moveSprite(mySprite)
 scene.cameraFollowSprite(mySprite)
 scene.setBackgroundColor(7)
@@ -906,9 +909,15 @@ tiles.setTilemap(tiles.createTilemap(
             TileScale.Sixteen
         ))
 tiles.placeOnTile(mySprite, tiles.getTileLocation(6, 5))
+ballShadow.setVelocity(50, -150)
+ball.setVelocity(50, -75)
 game.onUpdate(function () {
     if (!(controller.anyButton.isPressed())) {
         animation.stopAnimation(animation.AnimationTypes.All, mySprite)
         mySprite.setImage(playerImage)
+    }
+    if (ballShadow.y - ball.y < 2) {
+        ballShadow.setVelocity(25, -37)
+        ball.setVelocity(25, -75)
     }
 })
