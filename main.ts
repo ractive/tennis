@@ -665,6 +665,62 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     100,
     true
     )
+    animation.runImageAnimation(
+    opponentSprite,
+    [img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . f f f f f f . . . . . . . . . 
+. . . . . . . . f f f f f f f f . . . . . . . . 
+. . . . . . . f f f f f f f d f f . . . . . . . 
+. . . . . . . f f 1 1 d d 1 1 f f . . . . . . . 
+. . . . . . . f f 1 f d d f 1 f f . . . . . . . 
+. . . . . . . . f d d e d d d c c c . . . . . . 
+. . . . . . . . . d d d d d c c . c c . . . . . 
+. . . . . . . 4 4 4 4 4 4 c c 4 c . c . . . . . 
+. . . . . . d d 4 4 4 4 4 c 4 c 4 c c . . . . . 
+. . . . . . d d d 4 4 4 4 c c 4 c c . . . . . . 
+. . . . . . . d d d 4 4 c c c c d . . . . . . . 
+. . . . . . . . d d d c c c d d . . . . . . . . 
+. . . . . . . . 4 d d d d d 4 4 . . . . . . . . 
+. . . . . . . . 4 4 4 4 4 4 4 4 . . . . . . . . 
+. . . . . . . . 4 4 4 . . 4 4 4 . . . . . . . . 
+. . . . . . . . d d d . . d d d . . . . . . . . 
+. . . . f f f f 2 2 2 f f d d d f f f f . . . . 
+. . . f f f f f 1 1 1 f f f f f f f f f f . . . 
+. . . f f f f f 1 1 9 f f f f f f f f f f . . . 
+. . . f f f f f f f f f f f f f f f f f f . . . 
+. . . . f f f f f f f f f f f f f f f f . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . f f f f f f . . . . . . . . . 
+. . . . . . . . f f f f f f f f . . . . . . . . 
+. . . . . . . f f f f f f f d f f . . . . . . . 
+. . . . . . . f f 1 1 d d 1 1 f f . . . . . . . 
+. . . . . . . f f 1 f d d f 1 f f . . . . . . . 
+. . . . . . . . f d d e d d d c c c . . . . . . 
+. . . . . . . . . d d d d d c c . c c . . . . . 
+. . . . . . . 4 4 4 4 4 4 c c 4 c . c . . . . . 
+. . . . . . d d 4 4 4 4 4 c 4 c 4 c c . . . . . 
+. . . . . . d d d 4 4 4 4 c c 4 c c . . . . . . 
+. . . . . . . d d d 4 4 c c c c d . . . . . . . 
+. . . . . . . . d d d c c c d d . . . . . . . . 
+. . . . . . . . 4 d d d d d 4 4 . . . . . . . . 
+. . . . . . . . 4 4 4 4 4 4 4 4 . . . . . . . . 
+. . . . . . . . 4 4 4 . . 4 4 4 . . . . . . . . 
+. . . . . . . . d d d . . d d d . . . . . . . . 
+. . . . f f f f d d d f f 2 2 2 f f f f . . . . 
+. . . f f f f f f f f f f 1 1 1 f f f f f . . . 
+. . . f f f f f f f f f f 1 1 9 f f f f f . . . 
+. . . f f f f f f f f f f f f f f f f f f . . . 
+. . . . f f f f f f f f f f f f f f f f . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`],
+    100,
+    true
+    )
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
@@ -763,6 +819,112 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 . . . . . . . . . . 8 8 8 8 6 6 . . . . . . . . . 
 . . . . . . . . d d 6 6 6 6 6 6 6 . . . . . . . . 
 . . . . . . . . d d d 6 6 . d d d . . . . . . . . 
+. . . . . . f f d d d d f f d d d 2 1 f . . . . . 
+. . . . . f f f 2 2 2 f f f d d d 2 1 f f . . . . 
+. . . . . f f 1 1 1 1 f f f f f f 2 1 f f . . . . 
+. . . . . f f f f f f f f f f f f f f f f . . . . 
+. . . . . . f f f f f f f f f f f f f f . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . 
+`],
+    100,
+    false
+    )
+    animation.runImageAnimation(
+    opponentSprite,
+    [img`
+. . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . f f f f f f . f c . . . . . . . 
+. . . . . . . . f f f f f f f f c . c . . . . . . 
+. . . . . . . f . 1 1 f f f f f f c . c . . . . . 
+. . . . . . . . . 8 1 d d d f f f . c c . . . . . 
+. . . . . . . . d d d d d d d d . c . c . . . . . 
+. . . . . . . . . d d d d d d 4 c . c . . . . . . 
+. . . . . . . . . . 4 4 4 4 4 4 c c . . . . . . . 
+. . . . . . . . . . 4 4 4 4 4 4 4 . . . . . . . . 
+. . . . d d 4 4 4 4 4 4 4 4 4 4 4 . . . . . . . . 
+. . . . d d 4 4 4 4 4 4 e e e 4 . . . . . . . . . 
+. . . . . . . . . . e e 4 4 4 4 . . . . . . . . . 
+. . . . . . . . . . 4 4 4 4 4 4 . . . . . . . . . 
+. . . . . . . . . . 4 4 4 4 e e . . . . . . . . . 
+. . . . . . . . . . e e e e 4 4 . . . . . . . . . 
+. . . . . . . . d d 4 4 4 4 4 4 4 . . . . . . . . 
+. . . . . . . . d d d 4 4 . d d d . . . . . . . . 
+. . . . . . f f d d d d f f d d d 2 1 f . . . . . 
+. . . . . f f f 2 2 2 f f f d d d 2 1 f f . . . . 
+. . . . . f f 1 1 1 1 f f f f f f 2 1 f f . . . . 
+. . . . . f f f f f f f f f f f f f f f f . . . . 
+. . . . . . f f f f f f f f f f f f f f . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . f f f f f f . f . . . . . . . . . 
+. . . . . . . . f f f f f f f f . . . . . . . . . . 
+. . . . . . . f . 1 1 f f f f f f . . . . . . . . . 
+. . . . . . . . . 8 1 d d d f f f . . . . . . . . . 
+. . . . . . . . d d d d d d d d . . . . . . . . . . 
+. . . . . . . . . d d d d d d . . . . . . . . . . . 
+. . . . . . . . . . 4 4 4 4 4 4 . . . . . . . . . . 
+. . . . . . . . c . 4 4 4 4 4 4 . . . . . . . . . . 
+. . . . . . . c . c 4 4 4 4 4 e . . . . . . . . . . 
+. . . . . . . d d 4 4 4 4 4 e 4 . . . . . . . . . . 
+. . . . . . . d d 4 4 4 e e 4 4 . . . . . . . . . . 
+. . . . . . . c c c 4 e 4 4 4 4 . . . . . . . . . . 
+. . . . . . . c . c 4 4 4 4 e e . . . . . . . . . . 
+. . . . . . . . c . e e e e 4 4 . . . . . . . . . . 
+. . . . . . . . d d 4 4 4 4 4 4 4 . . . . . . . . . 
+. . . . . . . . d d d 4 4 . d d d . . . . . . . . . 
+. . . . . . f f d d d d f f d d d 2 1 f . . . . . . 
+. . . . . f f f 2 2 2 f f f d d d 2 1 f f . . . . . 
+. . . . . f f 1 1 1 1 f f f f f f 2 1 f f . . . . . 
+. . . . . f f f f f f f f f f f f f f f f . . . . . 
+. . . . . . f f f f f f f f f f f f f f . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . f f f f f f . f . . . . . . . . 
+. . . c c c . . . f f f f f f f f . . . . . . . . . 
+. . c . c . c . f . 1 1 f f f f f f . . . . . . . . 
+. . c c . c . c . . 8 1 d d d f f f . . . . . . . . 
+. . c . c . c c . d d d d d d d d . . . . . . . . . 
+. . c c . c . c . . d d d d d d . . . . . . . . . . 
+. . . c c c c c . . . 4 4 4 4 4 4 . . . . . . . . . 
+. . . . . . c c c . . 4 4 4 4 4 4 4 . . . . . . . . 
+. . . . . . c d d . . 4 4 4 4 4 e 4 . . . . . . . . 
+. . . . . . . d d 4 4 4 4 4 4 e 4 4 . . . . . . . . 
+. . . . . . . . . 4 4 4 4 4 e 4 4 . . . . . . . . . 
+. . . . . . . . . . . 4 d d 4 4 4 . . . . . . . . . 
+. . . . . . . . . . . 4 d d 4 e e . . . . . . . . . 
+. . . . . . . . . . . e e e e 4 4 . . . . . . . . . 
+. . . . . . . . . d d 4 4 4 4 4 4 4 . . . . . . . . 
+. . . . . . . . . d d d 4 4 . d d d . . . . . . . . 
+. . . . . . . f f d d d d f f d d d 2 1 f . . . . . 
+. . . . . . f f f 2 2 2 f f f d d d 2 1 f f . . . . 
+. . . . . . f f 1 1 1 1 f f f f f f 2 1 f f . . . . 
+. . . . . . f f f f f f f f f f f f f f f f . . . . 
+. . . . . . . f f f f f f f f f f f f f f . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . f f f f f f . f c . . . . . . . 
+. . . . . . . . f f f f f f f f c . c . . . . . . 
+. . . . . . . f . 1 1 f f f f c f c . c . . . . . 
+. . . . . . . . . 8 1 d d d f c c . c c . . . . . 
+. . . . . . . . d d d d d d d c . c . c . . . . . 
+. . . . . . . . . d d d d d d c c . c . . . . . . 
+. . . . . . . . . . 4 4 4 4 c c c c . . . . . . . 
+. . . . . . . . . . e e 4 d c c 4 . . . . . . . . 
+. . . . . . . . . 4 4 4 d d d 4 4 . . . . . . . . 
+. . . . . . . . . 4 4 4 d d 4 4 . . . . . . . . . 
+. . . . . . . . . 4 4 e 4 4 4 4 . . . . . . . . . 
+. . . . . . . . . . e 4 4 4 4 4 . . . . . . . . . 
+. . . . . . . . . . 4 4 4 4 e e . . . . . . . . . 
+. . . . . . . . . . e e e e 4 4 . . . . . . . . . 
+. . . . . . . . d d 4 4 4 4 4 4 4 . . . . . . . . 
+. . . . . . . . d d d 4 4 . d d d . . . . . . . . 
 . . . . . . f f d d d d f f d d d 2 1 f . . . . . 
 . . . . . f f f 2 2 2 f f f d d d 2 1 f f . . . . 
 . . . . . f f 1 1 1 1 f f f f f f 2 1 f f . . . . 
@@ -881,6 +1043,112 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     100,
     false
     )
+    animation.runImageAnimation(
+    opponentSprite,
+    [img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . c f . f f f f f f . . . . . . . . . . 
+. . . . . . c . c f f f f f f f f . . . . . . . . . 
+. . . . . c . c f f f f f f 1 1 . f . . . . . . . . 
+. . . . . c c . f f f d d d 1 8 . . . . . . . . . . 
+. . . . . c . c . d d d d d d d d . . . . . . . . . 
+. . . . . . c . c 4 d d d d d d . . . . . . . . . . 
+. . . . . . . c c 4 4 4 4 4 4 . . . . . . . . . . . 
+. . . . . . . . 4 4 4 4 4 4 4 d . . . . . . . . . . 
+. . . . . . . . 4 4 4 e 4 4 4 4 d . . . . . . . . . 
+. . . . . . . . . 4 4 4 e e 4 4 4 . . . . . . . . . 
+. . . . . . . . . 4 4 4 4 4 e 4 . . . . . . . . . . 
+. . . . . . . . . 4 4 4 4 4 4 . . . . . . . . . . . 
+. . . . . . . . . e e 4 4 4 4 . . . . . . . . . . . 
+. . . . . . . . . 4 4 e e e e . . . . . . . . . . . 
+. . . . . . . . 4 4 4 4 4 4 4 d d . . . . . . . . . 
+. . . . . . . . d d d . 4 4 d d d . . . . . . . . . 
+. . . . . f 1 2 d d d f f d d d d f f . . . . . . . 
+. . . . f f 1 2 d d d f f f 2 2 2 f f f . . . . . . 
+. . . . f f 1 2 f f f f f f 1 1 1 1 f f . . . . . . 
+. . . . f f f f f f f f f f f f f f f f . . . . . . 
+. . . . . f f f f f f f f f f f f f f . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . f . f f f f f f . . . . . . . . . . 
+. . . . . . . . . f f f f f f f f . . . c c c . . . 
+. . . . . . . . f f f f f 1 1 d . f . c . c . c . . 
+. . . . . . . . f f f d d 1 8 d . . c . c . c c . . 
+. . . . . . . . . d d d d d d d d . c c . c . c . . 
+. . . . . . . . . . d d d d d d . . c . c . c c . . 
+. . . . . . . . . 4 4 4 4 4 4 . . . c c c c c . . . 
+. . . . . . . . 4 4 4 4 4 4 4 . . c c c . . . . . . 
+. . . . . . . . 4 4 4 e 4 4 4 4 . d d c . . . . . . 
+. . . . . . . . d 4 4 4 e e 4 4 4 d d . . . . . . . 
+. . . . . . . . . 4 4 4 4 4 e 4 4 4 . . . . . . . . 
+. . . . . . . . . 4 4 4 4 4 4 . . . . . . . . . . . 
+. . . . . . . . . e e 4 4 4 4 . . . . . . . . . . . 
+. . . . . . . . . 4 4 e e e e . . . . . . . . . . . 
+. . . . . . . . 4 4 4 4 4 4 4 d d . . . . . . . . . 
+. . . . . . . . d d d . 4 4 d d d . . . . . . . . . 
+. . . . . f 1 2 d d d f f d d d d f f . . . . . . . 
+. . . . f f 1 2 d d d f f f 2 2 2 f f f . . . . . . 
+. . . . f f 1 2 f f f f f f 1 1 1 1 f f . . . . . . 
+. . . . f f f f f f f f f f f f f f f f . . . . . . 
+. . . . . f f f f f f f f f f f f f f . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . f . f f f f f f . . . . . . . . . . 
+. . . . . . . . . f f f f f f f f . . . . . . . . . 
+. . . . . . . . f f f f 1 1 d 1 . f . . . . . . . . 
+. . . . . . . . f f f d 1 8 d 8 . . . . . . . . . . 
+. . . . . . . . . d d d d d d d d . . . . . . . . . 
+. . . . . . . . . . d d d d d d . . . . . . . . . . 
+. . . . . . . . . 4 4 4 4 4 4 . . . . . . . . . . . 
+. . . . . . . . 4 4 4 4 4 4 4 . c . . . . . . . . . 
+. . . . . . . . 4 4 e 4 4 4 4 c . c . . . . . . . . 
+. . . . . . . . d 4 4 e e 4 d c c c . . . . . . . . 
+. . . . . . . . . 4 4 4 4 e d c . c . . . . . . . . 
+. . . . . . . . . 4 4 4 4 4 4 c c c . . . . . . . . 
+. . . . . . . . . e e 4 4 4 4 c . c . . . . . . . . 
+. . . . . . . . . 4 4 e e e e . c . . . . . . . . . 
+. . . . . . . . 4 4 4 4 4 4 4 d d . . . . . . . . . 
+. . . . . . . . d d d . 4 4 d d d . . . . . . . . . 
+. . . . . f 1 2 d d d f f d d d d f f . . . . . . . 
+. . . . f f 1 2 d d d f f f 2 2 2 f f f . . . . . . 
+. . . . f f 1 2 f f f f f f 1 1 1 1 f f . . . . . . 
+. . . . f f f f f f f f f f f f f f f f . . . . . . 
+. . . . . f f f f f f f f f f f f f f . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . f . f f f f f f . . . . . . . . . . 
+. . . . . . . . . f f f f f f f f . . . . . . . . . 
+. . . . . . . . f c f f 1 1 d 1 . f . . . . . . . . 
+. . . . . . . . c c c d 1 8 d 8 . . . . . . . . . . 
+. . . . . . . c c d c d d d d d d . . . . . . . . . 
+. . . . . . . c . c c d d d d d . . . . . . . . . . 
+. . . . . . . c c . c 4 4 4 4 . . . . . . . . . . . 
+. . . . . . . c . c c 4 4 4 4 4 . . . . . . . . . . 
+. . . . . . . . c c c c d 4 4 4 . . . . . . . . . . 
+. . . . . . . d 4 e 4 c d 4 e 4 . . . . . . . . . . 
+. . . . . . . d 4 e 4 4 4 e 4 4 . . . . . . . . . . 
+. . . . . . . . . 4 4 4 4 4 4 . . . . . . . . . . . 
+. . . . . . . . . e e 4 4 4 4 . . . . . . . . . . . 
+. . . . . . . . . 4 4 e e e e . . . . . . . . . . . 
+. . . . . . . . 4 4 4 4 4 4 4 d d . . . . . . . . . 
+. . . . . . . . d d d . 4 4 d d d . . . . . . . . . 
+. . . . . f 1 2 d d d f f d d d d f f . . . . . . . 
+. . . . f f 1 2 d d d f f f 2 2 2 f f f . . . . . . 
+. . . . f f 1 2 f f f f f f 1 1 1 1 f f . . . . . . 
+. . . . f f f f f f f f f f f f f f f f . . . . . . 
+. . . . . f f f f f f f f f f f f f f . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+`],
+    100,
+    false
+    )
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
@@ -929,6 +1197,62 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
 . . . . . . . 8 8 8 8 6 6 . . . . . . . . . . . 
 . . . . . . . 6 6 6 6 6 6 . . . . . . . . . . . 
 . . . . . . . 6 6 6 6 6 6 . . . . . . . . . . . 
+. . . f f f f d d f d d d f f f f . . . . . . . 
+. . f f f f 2 2 2 f d d d f f f f f . . . . . . 
+. . f f f 1 1 1 1 f 2 2 2 f f f f f . . . . . . 
+. . f f f f f f f 1 1 1 1 f f f f f . . . . . . 
+. . . f f f f f f f f f f f f f f . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`],
+    100,
+    true
+    )
+    animation.runImageAnimation(
+    opponentSprite,
+    [img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . f f f f f f . f c . . . . . . . . . 
+. . . . . f f f f f f f f c . c . . . . . . . . 
+. . . . f . 1 1 f f f f f f c . c . . . . . . . 
+. . . . . . 8 1 d d d f f f . c c . . . . . . . 
+. . . . . d d d d d d d d . c . c . . . . . . . 
+. . . . . . d d d d d d 4 c . c . . . . . . . . 
+. . . . . . . 4 4 4 4 4 4 c c . . . . . . . . . 
+. . . . . . d 4 4 4 4 4 4 4 . . . . . . . . . . 
+. . . . . d 4 4 4 4 4 4 4 4 . . . . . . . . . . 
+. . . . . 4 4 4 4 4 4 4 4 . . . . . . . . . . . 
+. . . . . . 4 4 4 4 4 4 4 . . . . . . . . . . . 
+. . . . . . . 4 4 4 4 4 4 . . . . . . . . . . . 
+. . . . . . . 4 4 4 4 e e . . . . . . . . . . . 
+. . . . . . . e e e e 4 4 . . . . . . . . . . . 
+. . . . . d d 4 4 4 4 4 4 4 . . . . . . . . . . 
+. . . . . d d d 4 4 . d d d . . . . . . . . . . 
+. . . f f d d d d f f d d d 2 1 f . . . . . . . 
+. . f f f 2 2 2 f f f d d d 2 1 f f . . . . . . 
+. . f f 1 1 1 1 f f f f f f 2 1 f f . . . . . . 
+. . f f f f f f f f f f f f f f f f . . . . . . 
+. . . f f f f f f f f f f f f f f . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . f f f f f f . f c . . . . . . . . . 
+. . . . . f f f f f f f f c . c . . . . . . . . 
+. . . . f . 1 1 f f f f f f c . c . . . . . . . 
+. . . . . . 8 1 d d d f f f . c c . . . . . . . 
+. . . . . d d d d d d d d . c . c . . . . . . . 
+. . . . . . d d d d d d 4 c . c . . . . . . . . 
+. . . . . . . 4 4 4 4 4 4 c c . . . . . . . . . 
+. . . . . . d 4 4 4 4 4 4 4 . . . . . . . . . . 
+. . . . . d 4 4 4 4 4 4 4 4 . . . . . . . . . . 
+. . . . . 4 4 4 4 4 4 4 4 . . . . . . . . . . . 
+. . . . . . 4 4 4 4 4 4 4 . . . . . . . . . . . 
+. . . . . . . 4 4 4 4 4 4 . . . . . . . . . . . 
+. . . . . . . 4 4 4 4 e e . . . . . . . . . . . 
+. . . . . . . e e e e 4 4 . . . . . . . . . . . 
+. . . . . . . 4 4 4 4 4 4 . . . . . . . . . . . 
+. . . . . . . 4 4 4 4 4 4 . . . . . . . . . . . 
 . . . f f f f d d f d d d f f f f . . . . . . . 
 . . f f f f 2 2 2 f d d d f f f f f . . . . . . 
 . . f f f 1 1 1 1 f 2 2 2 f f f f f . . . . . . 
@@ -997,6 +1321,62 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     100,
     true
     )
+    animation.runImageAnimation(
+    opponentSprite,
+    [img`
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . c f . f f f f f f . . . . . . . . 
+. . . . c . c f f f f f f f f . . . . . . . 
+. . . c . c f f f f f f 1 1 . f . . . . . . 
+. . . c c . f f f d d d 1 8 . . . . . . . . 
+. . . c . c . d d d d d d d d . . . . . . . 
+. . . . c . c 4 d d d d d d . . . . . . . . 
+. . . . . c c 4 4 4 4 4 4 . . . . . . . . . 
+. . . . . . 4 4 4 4 4 4 4 d . . . . . . . . 
+. . . . . . 4 4 4 4 4 4 4 4 d . . . . . . . 
+. . . . . . . 4 4 4 4 4 4 4 4 . . . . . . . 
+. . . . . . . 4 4 4 4 4 4 4 . . . . . . . . 
+. . . . . . . 4 4 4 4 4 4 . . . . . . . . . 
+. . . . . . . e e 4 4 4 4 . . . . . . . . . 
+. . . . . . . 4 4 e e e e . . . . . . . . . 
+. . . . . . 4 4 4 4 4 4 4 d d . . . . . . . 
+. . . . . . d d d . 4 4 d d d . . . . . . . 
+. . . f 1 2 d d d f f d d d d f f . . . . . 
+. . f f 1 2 d d d f f f 2 2 2 f f f . . . . 
+. . f f 1 2 f f f f f f 1 1 1 1 f f . . . . 
+. . f f f f f f f f f f f f f f f f . . . . 
+. . . f f f f f f f f f f f f f f . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . c f . f f f f f f . . . . . . . . 
+. . . . c . c f f f f f f f f . . . . . . . 
+. . . c . c f f f f f f 1 1 . f . . . . . . 
+. . . c c . f f f d d d 1 8 . . . . . . . . 
+. . . c . c . d d d d d d d d . . . . . . . 
+. . . . c . c 4 d d d d d d . . . . . . . . 
+. . . . . c c 4 4 4 4 4 4 . . . . . . . . . 
+. . . . . . 4 4 4 4 4 4 4 d . . . . . . . . 
+. . . . . . 4 4 4 4 4 4 4 4 d . . . . . . . 
+. . . . . . . 4 4 4 4 4 4 4 4 . . . . . . . 
+. . . . . . . 4 4 4 4 4 4 4 . . . . . . . . 
+. . . . . . . 4 4 4 4 4 4 . . . . . . . . . 
+. . . . . . . e e 4 4 4 4 . . . . . . . . . 
+. . . . . . . 4 4 e e e e . . . . . . . . . 
+. . . . . . . 4 4 4 4 4 4 . . . . . . . . . 
+. . . . . . . 4 4 4 4 4 4 . . . . . . . . . 
+. . . f f f f d d d f d d f f f f . . . . . 
+. . f f f f f d d d f 2 2 2 f f f f . . . . 
+. . f f f f f 2 2 2 f 1 1 1 1 f f f . . . . 
+. . f f f f f 1 1 1 1 f f f f f f f . . . . 
+. . . f f f f f f f f f f f f f f . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+`],
+    100,
+    true
+    )
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
@@ -1049,6 +1429,62 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
 . . . f f f f 2 2 2 f f f f 1 1 1 f f f f . . . 
 . . . f f f f 1 1 1 f f f f 1 1 1 f f f f . . . 
 . . . f f f f f f f f f f f 1 1 9 f f f f . . . 
+. . . . f f f f f f f f f f f f f f f f . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`],
+    100,
+    true
+    )
+    animation.runImageAnimation(
+    opponentSprite,
+    [img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . f f f f f f . . . . . . . . . 
+. . . . . . . . f f f f f f f f . . . . . . . . 
+. . . . . . . f f f f f f f d f f . . . . . . . 
+. . . . . . . f f 1 1 d d 1 1 f f . . . . . . . 
+. . . . . . . f f 1 f d d f 1 f f . . . . . . . 
+. . . . . . . . f d d e d d d c c c . . . . . . 
+. . . . . . . . . d d d d d c c . c c . . . . . 
+. . . . . . . 4 4 4 4 4 4 c c 4 c . c . . . . . 
+. . . . . . d d 4 4 4 4 4 c 4 c 4 c c . . . . . 
+. . . . . . d d d 4 4 4 4 c c 4 c c . . . . . . 
+. . . . . . . d d d 4 4 c c c c d . . . . . . . 
+. . . . . . . . d d d c c c d d . . . . . . . . 
+. . . . . . . . 4 d d d d d 4 4 . . . . . . . . 
+. . . . . . . . 4 4 4 4 4 4 4 4 . . . . . . . . 
+. . . . . . . . 4 4 4 . . 4 4 4 . . . . . . . . 
+. . . . . . . . d d d . . d d d . . . . . . . . 
+. . . . f f f f d d d f f 2 2 2 f f f f . . . . 
+. . . f f f f f f f f f f 1 1 1 f f f f f . . . 
+. . . f f f f f f f f f f 1 1 9 f f f f f . . . 
+. . . f f f f f f f f f f f f f f f f f f . . . 
+. . . . f f f f f f f f f f f f f f f f . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . f f f f f f . . . . . . . . . 
+. . . . . . . . f f f f f f f f . . . . . . . . 
+. . . . . . . f f f f f f f d f f . . . . . . . 
+. . . . . . . f f 1 1 d d 1 1 f f . . . . . . . 
+. . . . . . . f f 1 f d d f 1 f f . . . . . . . 
+. . . . . . . . f d d e d d d c c c . . . . . . 
+. . . . . . . . . d d d d d c c . c c . . . . . 
+. . . . . . . 4 4 4 4 4 4 c c 4 c . c . . . . . 
+. . . . . . d d 4 4 4 4 4 c 4 c 4 c c . . . . . 
+. . . . . . d d d 4 4 4 4 c c 4 c c . . . . . . 
+. . . . . . . d d d 4 4 c c c c d . . . . . . . 
+. . . . . . . . d d d c c c d d . . . . . . . . 
+. . . . . . . . 4 d d d d d 4 4 . . . . . . . . 
+. . . . . . . . 4 4 4 4 4 4 4 4 . . . . . . . . 
+. . . . . . . . 4 4 4 . . 4 4 4 . . . . . . . . 
+. . . . . . . . d d d . . d d d . . . . . . . . 
+. . . . f f f f 2 2 2 f f d d d f f f f . . . . 
+. . . f f f f f 1 1 1 f f f f f f f f f f . . . 
+. . . f f f f f 1 1 9 f f f f f f f f f f . . . 
+. . . f f f f f f f f f f f f f f f f f f . . . 
 . . . . f f f f f f f f f f f f f f f f . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
 `],
@@ -1125,7 +1561,7 @@ controller.menu.onEvent(ControllerButtonEvent.Pressed, function () {
 . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . d . . . . . . . . 
 . . . . . . . . . . . . d d . . . . . . . . 
 . . . . . . . . . . . . d d . . . . . . . . 
 . . . . c c c . . . . . f d . . . . . . . . 
@@ -1215,10 +1651,203 @@ controller.menu.onEvent(ControllerButtonEvent.Pressed, function () {
 . . . f f f f f f f f f f f f f f . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . 
 `],
-    100,
+    400,
+    false
+    )
+    animation.runImageAnimation(
+    opponentSprite,
+    [img`
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . f f f f f f . . . . . . . 
+. . . . . . . . f f f f f f f f . . . . . . 
+. . . . . . . f f f f f f f d f f . . . . . 
+. . . . . . . f f 1 1 d d 1 1 f f . . . . . 
+. . . . . . . f f 1 f d d f 1 f f . . . . . 
+. . . . . . . . f d d e d d d c c c . . . . 
+. . . . . . . . . d d d d d c c . c c . . . 
+. . . . . . . 4 4 4 4 4 4 c c 4 c . c . . . 
+. . . . . . d d 4 4 4 4 4 c 4 c 4 c c . . . 
+. . . . . . d d d 4 4 4 4 c c 4 c c . . . . 
+. . . . . . . d d d 4 4 c c c c d . . . . . 
+. . . . . . . . d d d c c c d d . . . . . . 
+. . . . . . . . 4 d d d d d 4 4 . . . . . . 
+. . . . . . . . 4 4 4 4 4 4 4 4 . . . . . . 
+. . . . . . . . 4 4 4 . . 4 4 4 . . . . . . 
+. . . . . . . d d d d . . d d d d . . . . . 
+. . . . f f f d d d f f f f d d d f f f . . 
+. . . f f f f 2 2 2 f f f f 2 2 2 f f f f . 
+. . . f f f 1 1 1 1 f f f f 1 1 1 1 f f f . 
+. . . f f f f f f f f f f f f f f f f f f . 
+. . . . f f f f f f f f f f f f f f f f . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . f f f f f f . . . . . . . 
+. . . . . . . . f f f f f f f f . . . . . . 
+. . . . . . . f f f f f f f d f f . . . . . 
+. . . . . . . f f 1 1 d d 1 1 f f . . . . . 
+. . . . . . . f f 1 f d d f 1 f f . . . . . 
+. . . . . . . . f d d e d d d . . . . . . . 
+. . . . . . . . . d d d d d . . . . . . . . 
+. . . . . . . . 4 4 4 4 4 4 4 . . . . . . . 
+. . . . . . . 4 4 4 4 4 4 4 4 . . . . . . . 
+. . . . . . . d d 4 4 4 4 4 e . . . . . . . 
+. . . . . . . d d 4 4 4 d d 4 . . . . . . . 
+. . . . . . . d d 4 4 d d 4 4 . . . . . . . 
+. . . . . . . d c c c 5 5 f e . . . . . . . 
+. . . . . . . c c 4 c 5 5 f 4 . . . . . . . 
+. . . . . . . c 4 c 4 c f 4 4 . . . . . . . 
+. . . . . . . c c c c c d d d . . . . . . . 
+. . . . f f f c 1 c 1 c d d d f f f f f . . 
+. . . f f f f f c c c f 2 2 2 f f f f f f . 
+. . . f f f f f f f f f 1 1 1 f f f f f f . 
+. . . f f f f f f f f f f f f f f f f f f . 
+. . . . f f f f f f f f f f f f f f f f . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . f f . . . . . . . 
+. . . . . . . c c c . . f 5 5 f . . . . . . 
+. . . . . . c . c . c . f 5 5 f . . . . . . 
+. . . . . . c c . c c . . f f . . . . . . . 
+. . . . . . c . c . c . . d d . . . . . . . 
+. . . . . . c c . f f f f d d . . . . . . . 
+. . . . . . . c f f f f 4 4 4 f . . . . . . 
+. . . . . . . f f 1 f d 4 4 4 f f . . . . . 
+. . . . . . . f f 1 1 d 4 4 4 f f . . . . . 
+. . . . . . . f f d d e 4 4 4 f f . . . . . 
+. . . . . . . . f d d d 4 4 4 . . . . . . . 
+. . . . . . . 4 4 d d d 4 4 4 . . . . . . . 
+. . . . . . . 4 4 4 4 4 4 4 4 . . . . . . . 
+. . . . . . . . 4 4 4 4 4 4 4 . . . . . . . 
+. . . . . . . . 4 4 4 4 4 4 4 . . . . . . . 
+. . . . . . . . 4 4 4 4 4 4 4 . . . . . . . 
+. . . . . . . . e e e 4 4 4 4 . . . . . . . 
+. . . . . . . . 4 4 4 e e e e . . . . . . . 
+. . . . . . . . 4 4 4 4 4 4 4 . . . . . . . 
+. . . . . . . . d d d 4 4 4 4 . . . . . . . 
+. . . . . . . . 2 2 2 . d d d . . . . . . . 
+. . . . f f f f 1 1 1 f d d d f f f f f . . 
+. . . f f f f f f f f f 2 2 2 f f f f f f . 
+. . . f f f f f f f f f 1 1 1 f f f f f f . 
+. . . f f f f f f f f f f f f f f f f f f . 
+. . . . f f f f f f f f f f f f f f f f . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . c c c . . . . d . . . . . . . 
+. . . . . . c . c . c . . d d . . . . . . . 
+. . . . . . c c . c c . . d d . . . . . . . 
+. . . . . . c . c . c . . d d . . . . . . . 
+. . . . . . c c . f f f f d d . . . . . . . 
+. . . . . . . c f f f f 4 4 4 f . . . . . . 
+. . . . . . . f f 1 f d 4 4 4 f f . . . . . 
+. . . . . . . f f 1 1 d 4 4 4 f f . . . . . 
+. . . . . . . f f d d e 4 4 4 f f . . . . . 
+. . . . . . . . f d d d 4 4 4 . . . . . . . 
+. . . . . . . 4 4 d d d 4 4 4 . . . . . . . 
+. . . . . . . 4 4 4 4 4 4 4 4 . . . . . . . 
+. . . . . . . . 4 4 4 4 4 4 4 . . . . . . . 
+. . . . . . . . 4 4 4 4 4 4 4 . . . . . . . 
+. . . . . . . . 4 4 4 4 4 4 4 . . . . . . . 
+. . . . . . . . e e e 4 4 4 4 . . . . . . . 
+. . . . . . . . 4 4 4 e e e e . . . . . . . 
+. . . . . . . . 4 4 4 4 4 4 4 . . . . . . . 
+. . . . . . . . d d d 4 4 4 4 . . . . . . . 
+. . . . . . . . 2 2 2 . d d d . . . . . . . 
+. . . . f f f f 1 1 1 f d d d f f f f f . . 
+. . . f f f f f f f f f 2 2 2 f f f f f f . 
+. . . f f f f f f f f f 1 1 1 f f f f f f . 
+. . . f f f f f f f f f f f f f f f f f f . 
+. . . . f f f f f f f f f f f f f f f f . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . c c . . . . . . . . . . . . 
+. . . . . . . c . c c . . . . . . . . . . . 
+. . . . . . c . c . c . . . . . . . . . . . 
+. . . . . . c c . c f f f f . . . . . . . . 
+. . . . . . . c c f f f f f f f . . . . . . 
+. . . . . . d d c f f d f f f f f . . . . . 
+. . . . . . d d f 1 1 d 1 1 d f f . . . . . 
+. . . . . . d d f 1 f d 1 f d f f . . . . . 
+. . . . . . . 4 4 d d e d d d . . . . . . . 
+. . . . . . . 4 4 d d d d d 4 . . . . . . . 
+. . . . . . . . 4 4 4 4 4 4 4 . . . . . . . 
+. . . . . . . . 4 4 4 4 4 e 4 . . . . . . . 
+. . . . . . . . 4 4 4 d d 4 4 . . . . . . . 
+. . . . . . . . 4 4 4 d d 4 e . . . . . . . 
+. . . . . . . . 4 4 4 e e e e . . . . . . . 
+. . . . . . . . e e e 4 4 4 4 . . . . . . . 
+. . . . . . . . 4 4 4 4 4 4 4 . . . . . . . 
+. . . . . . . . d d d . d d d . . . . . . . 
+. . . . . . . . d d d . 2 2 2 . . . . . . . 
+. . . . f f f f d d d f 1 1 1 f f f f f . . 
+. . . f f f f f 2 2 2 f f f f f f f f f f . 
+. . . f f f f f 1 1 1 f f f f f f f f f f . 
+. . . f f f f f f f f f f f f f f f f f f . 
+. . . . f f f f f f f f f f f f f f f f . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+`,img`
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . f f f f . . . . . . . . 
+. . . . . . . . f f f f f f f f . . . . . . 
+. . . . . . . f f f f d f f f f f . . . . . 
+. . . . . . . f f 1 1 d 1 1 d f f . . . . . 
+. . . . . . . . f 1 f d 1 f d f f . . . . . 
+. . . . . . . . . d d e d d d . . . . . . . 
+. . . . . . . 4 4 d d d d d 4 . . . . . . . 
+. . . . . . . 4 4 4 4 4 4 4 4 4 . . . . . . 
+. . . . . . . 4 4 e 4 4 4 4 4 4 . . . . . . 
+. . . . . . . 4 4 4 e 4 4 4 4 . . . . . . . 
+. . . . . . . . 4 4 4 e 4 4 e . . . . . . . 
+. . . . . . . . e 4 4 d e e e . . . . . . . 
+. . . . . . . . e e d d c 4 4 . . . . . . . 
+. . . . . . . . 4 4 d c c c c c . . . . . . 
+. . . . . . . . d d d . c c 1 c c . . . . . 
+. . . . . . . . d d d . c 1 c 1 c c . . . . 
+. . . . f f f f d d d f c c 1 c 1 c f f . . 
+. . . f f f f f 2 2 2 f f c c 1 c c f f f . 
+. . . f f f f f 1 1 1 f f f c c c f f f f . 
+. . . f f f f f f f f f f f f f f f f f f . 
+. . . . f f f f f f f f f f f f f f f f . . 
+. . . . . . . . . . . . . . . . . . . . . . 
+`],
+    400,
     false
     )
 })
+let opponentSprite: Sprite = null
 let mySprite: Sprite = null
 let playerImage = img`
 . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -1246,7 +1875,34 @@ let playerImage = img`
 . . . . f f f f f f f f f f f f f f f f . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
 `
+let opponentImage = img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . f f f f f f . . . . . . . . . 
+. . . . . . . . f f f f f f f f . . . . . . . . 
+. . . . . . . f f f f f f f d f f . . . . . . . 
+. . . . . . . f f 1 1 d d 1 1 f f . . . . . . . 
+. . . . . . . f f 1 f d d f 1 f f . . . . . . . 
+. . . . . . . . f d d e d d d c c c . . . . . . 
+. . . . . . . . . d d d d d c c . c c . . . . . 
+. . . . . . . 4 4 4 4 4 4 c c 4 c . c . . . . . 
+. . . . . . d d 4 4 4 4 4 c 4 c 4 c c . . . . . 
+. . . . . . d d d 4 4 4 4 c c 4 c c . . . . . . 
+. . . . . . . d d d 4 4 c c c c d . . . . . . . 
+. . . . . . . . d d d c c c d d . . . . . . . . 
+. . . . . . . . 4 d d d d d 4 4 . . . . . . . . 
+. . . . . . . . 4 4 4 4 4 4 4 4 . . . . . . . . 
+. . . . . . . . 4 4 4 . . 4 4 4 . . . . . . . . 
+. . . . . . . d d d d . . d d d d . . . . . . . 
+. . . . f f f d d d f f f f d d d f f f . . . . 
+. . . f f f f 2 2 2 f f f f 2 2 2 f f f f . . . 
+. . . f f f 1 1 1 1 f f f f 1 1 1 1 f f f . . . 
+. . . f f f f f f f f f f f f f f f f f f . . . 
+. . . . f f f f f f f f f f f f f f f f . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`
 mySprite = sprites.create(playerImage, SpriteKind.Player)
+opponentSprite = sprites.create(opponentImage, SpriteKind.Enemy)
 let ball = sprites.create(img`
 . f f f f . 
 f d 5 5 d f 
@@ -1266,6 +1922,7 @@ ballShadow.y = 200
 ballShadow.setFlag(SpriteFlag.Ghost, true)
 ball.setFlag(SpriteFlag.Ghost, true)
 controller.moveSprite(mySprite)
+controller.moveSprite(opponentSprite)
 scene.cameraFollowSprite(mySprite)
 scene.setBackgroundColor(7)
 tiles.setTilemap(tiles.createTilemap(
@@ -1275,7 +1932,7 @@ tiles.setTilemap(tiles.createTilemap(
 . . . . . . . . . . . . 
 . . . . . . . . . . . . 
 . . . . . . . . . . . . 
-2 2 2 2 2 2 2 2 2 2 2 2 
+. . . . . . . . . . . . 
 . . . . . . . . . . . . 
 . . . . . . . . . . . . 
 . . . . . . . . . . . . 
@@ -1288,12 +1945,15 @@ tiles.setTilemap(tiles.createTilemap(
             TileScale.Sixteen
         ))
 tiles.placeOnTile(mySprite, tiles.getTileLocation(6, 5))
+tiles.placeOnTile(opponentSprite, tiles.getTileLocation(3, 3))
 ballShadow.setVelocity(50, -150)
 ball.setVelocity(50, -75)
 game.onUpdate(function () {
     if (!(controller.anyButton.isPressed())) {
         animation.stopAnimation(animation.AnimationTypes.All, mySprite)
         mySprite.setImage(playerImage)
+        animation.stopAnimation(animation.AnimationTypes.All, opponentSprite)
+        opponentSprite.setImage(opponentImage)
     }
     if (ballShadow.y - ball.y < 2) {
         ballShadow.setVelocity(25, -37)
