@@ -677,9 +677,9 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 . . . . . . . f f 1 f d d f 1 f f . . . . . . . 
 . . . . . . . . f d d e d d d c c c . . . . . . 
 . . . . . . . . . d d d d d c c . c c . . . . . 
-. . . . . . . 4 4 4 4 4 4 c c 4 c . c . . . . . 
-. . . . . . d d 4 4 4 4 4 c 4 c 4 c c . . . . . 
-. . . . . . d d d 4 4 4 4 c c 4 c c . . . . . . 
+. . . . . . . 4 4 4 4 4 4 c c 1 c . c . . . . . 
+. . . . . . d d 4 4 4 4 4 c 1 c 1 c c . . . . . 
+. . . . . . d d d 4 4 4 4 c c 1 c c . . . . . . 
 . . . . . . . d d d 4 4 c c c c d . . . . . . . 
 . . . . . . . . d d d c c c d d . . . . . . . . 
 . . . . . . . . 4 d d d d d 4 4 . . . . . . . . 
@@ -702,9 +702,9 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 . . . . . . . f f 1 f d d f 1 f f . . . . . . . 
 . . . . . . . . f d d e d d d c c c . . . . . . 
 . . . . . . . . . d d d d d c c . c c . . . . . 
-. . . . . . . 4 4 4 4 4 4 c c 4 c . c . . . . . 
-. . . . . . d d 4 4 4 4 4 c 4 c 4 c c . . . . . 
-. . . . . . d d d 4 4 4 4 c c 4 c c . . . . . . 
+. . . . . . . 4 4 4 4 4 4 c c 1 c . c . . . . . 
+. . . . . . d d 4 4 4 4 4 c 1 c 1 c c . . . . . 
+. . . . . . d d d 4 4 4 4 c c 1 c c . . . . . . 
 . . . . . . . d d d 4 4 c c c c d . . . . . . . 
 . . . . . . . . d d d c c c d d . . . . . . . . 
 . . . . . . . . 4 d d d d d 4 4 . . . . . . . . 
@@ -1447,9 +1447,9 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
 . . . . . . . f f 1 f d d f 1 f f . . . . . . . 
 . . . . . . . . f d d e d d d c c c . . . . . . 
 . . . . . . . . . d d d d d c c . c c . . . . . 
-. . . . . . . 4 4 4 4 4 4 c c 4 c . c . . . . . 
-. . . . . . d d 4 4 4 4 4 c 4 c 4 c c . . . . . 
-. . . . . . d d d 4 4 4 4 c c 4 c c . . . . . . 
+. . . . . . . 4 4 4 4 4 4 c c 1 c . c . . . . . 
+. . . . . . d d 4 4 4 4 4 c 1 c 1 c c . . . . . 
+. . . . . . d d d 4 4 4 4 c c 1 c c . . . . . . 
 . . . . . . . d d d 4 4 c c c c d . . . . . . . 
 . . . . . . . . d d d c c c d d . . . . . . . . 
 . . . . . . . . 4 d d d d d 4 4 . . . . . . . . 
@@ -1472,9 +1472,9 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
 . . . . . . . f f 1 f d d f 1 f f . . . . . . . 
 . . . . . . . . f d d e d d d c c c . . . . . . 
 . . . . . . . . . d d d d d c c . c c . . . . . 
-. . . . . . . 4 4 4 4 4 4 c c 4 c . c . . . . . 
-. . . . . . d d 4 4 4 4 4 c 4 c 4 c c . . . . . 
-. . . . . . d d d 4 4 4 4 c c 4 c c . . . . . . 
+. . . . . . . 4 4 4 4 4 4 c c 1 c . c . . . . . 
+. . . . . . d d 4 4 4 4 4 c 1 c 1 c c . . . . . 
+. . . . . . d d d 4 4 4 4 c c 1 c c . . . . . . 
 . . . . . . . d d d 4 4 c c c c d . . . . . . . 
 . . . . . . . . d d d c c c d d . . . . . . . . 
 . . . . . . . . 4 d d d d d 4 4 . . . . . . . . 
@@ -1672,9 +1672,9 @@ controller.menu.onEvent(ControllerButtonEvent.Pressed, function () {
 . . . . . . . f f 1 f d d f 1 f f . . . . . 
 . . . . . . . . f d d e d d d c c c . . . . 
 . . . . . . . . . d d d d d c c . c c . . . 
-. . . . . . . 4 4 4 4 4 4 c c 4 c . c . . . 
-. . . . . . d d 4 4 4 4 4 c 4 c 4 c c . . . 
-. . . . . . d d d 4 4 4 4 c c 4 c c . . . . 
+. . . . . . . 4 4 4 4 4 4 c c 1 c . c . . . 
+. . . . . . d d 4 4 4 4 4 c 1 c 1 c c . . . 
+. . . . . . d d d 4 4 4 4 c c 1 c c . . . . 
 . . . . . . . d d d 4 4 c c c c d . . . . . 
 . . . . . . . . d d d c c c d d . . . . . . 
 . . . . . . . . 4 d d d d d 4 4 . . . . . . 
@@ -1709,8 +1709,8 @@ controller.menu.onEvent(ControllerButtonEvent.Pressed, function () {
 . . . . . . . d d 4 4 4 d d 4 . . . . . . . 
 . . . . . . . d d 4 4 d d 4 4 . . . . . . . 
 . . . . . . . d c c c 5 5 f e . . . . . . . 
-. . . . . . . c c 4 c 5 5 f 4 . . . . . . . 
-. . . . . . . c 4 c 4 c f 4 4 . . . . . . . 
+. . . . . . . c c 1 c 5 5 f 4 . . . . . . . 
+. . . . . . . c 1 c 1 c f 4 4 . . . . . . . 
 . . . . . . . c c c c c d d d . . . . . . . 
 . . . . f f f c 1 c 1 c d d d f f f f f . . 
 . . . f f f f f c c c f 2 2 2 f f f f f f . 
@@ -1885,9 +1885,9 @@ let opponentImage = img`
 . . . . . . . f f 1 f d d f 1 f f . . . . . . . 
 . . . . . . . . f d d e d d d c c c . . . . . . 
 . . . . . . . . . d d d d d c c . c c . . . . . 
-. . . . . . . 4 4 4 4 4 4 c c 4 c . c . . . . . 
-. . . . . . d d 4 4 4 4 4 c 4 c 4 c c . . . . . 
-. . . . . . d d d 4 4 4 4 c c 4 c c . . . . . . 
+. . . . . . . 4 4 4 4 4 4 c c 1 c . c . . . . . 
+. . . . . . d d 4 4 4 4 4 c 1 c 1 c c . . . . . 
+. . . . . . d d d 4 4 4 4 c c 1 c c . . . . . . 
 . . . . . . . d d d 4 4 c c c c d . . . . . . . 
 . . . . . . . . d d d c c c d d . . . . . . . . 
 . . . . . . . . 4 d d d d d 4 4 . . . . . . . . 
