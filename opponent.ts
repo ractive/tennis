@@ -1,4 +1,4 @@
-class Opponent implements TennisPlayer {
+class Opponent extends BasePlayer implements TennisPlayer {
     private static readonly image = img`
         . . . . . . . . . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -26,16 +26,9 @@ class Opponent implements TennisPlayer {
         . . . . . . . . . . . . . . . . . . . . . . . . 
     `;
 
-    private sprite: Sprite = sprites.create(Opponent.image);
-
     constructor() {
+        super(Opponent.image);
         this.sprite.setFlag(SpriteFlag.StayInScreen, false);
-        game.onUpdate(function () {
-            if (!(controller.anyButton.isPressed())) {
-                animation.stopAnimation(animation.AnimationTypes.All, this.sprite);
-                this.sprite.setImage(Opponent.image);
-            }
-        });
         controller.moveSprite(this.sprite);
     }
 
@@ -708,9 +701,5 @@ class Opponent implements TennisPlayer {
             100,
             false
         );
-    }
-
-    public placeOnTile(x: number, y: number): void {
-        tiles.placeOnTile(this.sprite, tiles.getTileLocation(x, y));
     }
 }

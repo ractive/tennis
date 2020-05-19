@@ -11,7 +11,8 @@
         "README.md",
         "ball.ts",
         "opponent.ts",
-        "player.ts"
+        "player.ts",
+        "tennisplayer.ts"
     ],
     "testFiles": [
         "test.ts"
