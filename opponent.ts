@@ -472,7 +472,7 @@ class Opponent extends BasePlayer implements TennisPlayer {
                     . . . . f f f f f f f f f f f f f f f f . . 
                     . . . . . . . . . . . . . . . . . . . . . . 
             `],
-            400,
+            200,
             false
         );
     }

@@ -609,16 +609,29 @@ d d d d d d d d d d d d d d d d
 `
 }
 
+function halfOf(v: number) {
+    return v >> 1;
+}
+
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     player.up();
 });
 
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    player.backhand();
+    player.serve();
+    opponent.serve();
 });
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    player.forehand();
+    if (player.x < ball.x) {
+        player.forehand();
+    } else {
+        player.backhand();
+    }
+
+    if (Math.abs(player.x - ball.x) < 15 && Math.abs(player.y - ball.y) < 15 && ball.height > 3 && ball.height < 20) {
+        ball.shot();
+    }
 });
 
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -631,10 +644,6 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     player.down();
-});
-
-controller.menu.onEvent(ControllerButtonEvent.Pressed, function () {
-    player.serve();
 });
 
 scene.setBackgroundColor(7);
@@ -663,28 +672,38 @@ tiles.setTilemap(tileMapData);
 const sceneWidth = tileMapData.width() * (tileMapData.scale << 2);
 const sceneHeight = tileMapData.height() * (tileMapData.scale << 2);
 
+const ball = new Ball();
 const opponent = new Opponent();
 const player = new Player();
-player.placeOnTile(6, 8);
-opponent.placeOnTile(7, 2);
-scene.centerCameraAt(sceneWidth >> 1, sceneHeight >> 1);
+player.placeOnTile(6, 2);
+opponent.placeOnTile(3, 2);
+scene.centerCameraAt(halfOf(sceneWidth), halfOf(sceneHeight));
+ball.setPosition(halfOf(sceneWidth), scene.cameraTop() + 20, 20);
+ball.move(90, trig.toRadian(30));
 
 game.onUpdate(function () {
     const border = 30;
-    let cameraX = scene.cameraLeft() + (scene.screenWidth() >> 1);
-    let cameraY = scene.cameraTop() + (scene.screenHeight() >> 1);
+    let cameraX = scene.cameraLeft() + halfOf(scene.screenWidth());
+    let cameraY = scene.cameraTop() + halfOf(scene.screenHeight());
 
     if (player.x - scene.cameraLeft() < border) {
-        cameraX = player.x - border + (scene.screenWidth() >> 1);
+        cameraX = player.x - border + halfOf(scene.screenWidth());
     } else if (player.x > scene.cameraLeft() + scene.screenWidth() - border) {
-        cameraX = player.x + border - (scene.screenWidth() >> 1);
+        cameraX = player.x + border - halfOf(scene.screenWidth());
     }
 
     if (player.y - scene.cameraTop() < border) {
-        cameraY = player.y - border + (scene.screenHeight() >> 1);
+        cameraY = player.y - border + halfOf(scene.screenHeight());
     } else if (player.y > scene.cameraTop() + scene.screenHeight() - border) {
-        cameraY = player.y + border - (scene.screenHeight() >> 1);
+        cameraY = player.y + border - halfOf(scene.screenHeight());
     }
 
     scene.centerCameraAt(cameraX, cameraY);
-})
+});
+
+game.onUpdate(() => {
+    if (Math.abs(ball.v) < 2) {
+        ball.setPosition(halfOf(sceneWidth), scene.cameraTop() + 20, 20);
+        ball.move(randint(20, 90), randint(-45, 45));   
+    }
+});

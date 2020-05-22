@@ -12,7 +12,8 @@
         "ball.ts",
         "opponent.ts",
         "player.ts",
-        "tennisplayer.ts"
+        "tennisplayer.ts",
+        "util.ts"
     ],
     "testFiles": [
         "test.ts"

@@ -28,7 +28,7 @@ class Player extends BasePlayer implements TennisPlayer {
 
     constructor() {
         super(Player.image);
-        this.sprite.setFlag(SpriteFlag.StayInScreen, true);
+        //this.sprite.setFlag(SpriteFlag.StayInScreen, true);
         controller.moveSprite(this.sprite);
     }
 
@@ -440,7 +440,7 @@ class Player extends BasePlayer implements TennisPlayer {
                     . . . f f f f f f f f f f f f f f . . . . . 
                     . . . . . . . . . . . . . . . . . . . . . . 
             `],
-            400,
+            200,
             false
         );
     }
