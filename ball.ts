@@ -34,7 +34,6 @@ class Ball {
      */
     public vz: number = 0;
     private t: number = 0;
-    private freefall: boolean = true;
 
     constructor() {
         this.sprite.setFlag(SpriteFlag.Ghost, true);
@@ -43,33 +42,27 @@ class Ball {
 
         // https://www.omnicalculator.com/physics/trajectory-projectile-motion
         // https://www.omnicalculator.com/physics/projectile-motion
-        // Inspired by https://physics.stackexchange.com/questions/256468/model-formula-for-bouncing-ball
         game.onUpdate(() => {
             const now = game.runtime();
             const dt = (now - this.t) / 1000;
             const vz = this.vz;
             this.t = now;
-            // console.log("vz: " + vz);
-            // console.log("height: " + this.height);
-            if (this.freefall) {
-                const hNew = this.height + this.vz * dt - 0.5 * Ball.G * dt * dt;
-                // console.log("hNew: " + hNew);
-                if (hNew < 0) {
-                    this.height = 0;
-                    this.freefall = false;
-                    this.leaveBounceMark();
-                } else {
-                    this.vz = this.vz - Ball.G * dt;
-                    this.height = hNew;
-                }
 
-            } else {
-                this.vz *= -Ball.RHO;
+            // calucate the new height of the ball
+            const hNew = this.height + this.vz * dt - 0.5 * Ball.G * dt * dt;
+            // calculate new vertical velocity
+            this.vz = this.vz - Ball.G * dt;
+            if (hNew <= 0) {
+                // ball hits ground and bounces
                 this.height = 0;
-                this.freefall = true;
+                this.leaveBounceMark();
+                // vertical velocity changes direction (-1) and is damped (RHO) by bounce
+                this.vz *= Ball.RHO * -1;
+                // horizontal velocity also is decreased because of the damping on the ground
                 this.v *= 0.8;
+            } else {
+                this.height = hNew;
             }
-            
         });
     }
 
@@ -135,7 +128,6 @@ class Ball {
         this.height = h;
         this.x = x;
         this.y = y;
-        this.freefall = true;
         this.angleRadian = trig.toRadian(degrees);
         this.v = v;
         this.vz = Math.min(this.v * Math.atan(trig.toRadian(20)), 20);
@@ -143,7 +135,6 @@ class Ball {
     }
 
     public shot(): void {
-        this.freefall = true;
         this.angleRadian = trig.toRadian(180);
         this.v *= 1.5;
         this.vz = Math.min(this.v * Math.atan(trig.toRadian(20)), 20);
