@@ -29,6 +29,9 @@ class Ball {
     private _height: number = 0;
     private angleRadian: number = 0;
     public _v: number = 0;
+    /**
+     * vz is the vertical speed of the ball
+     */
     public vz: number = 0;
     private t: number = 0;
     private freefall: boolean = true;
@@ -38,6 +41,8 @@ class Ball {
         this.shadowSprite.setFlag(SpriteFlag.Ghost, true);
         this.z = 5;
 
+        // https://www.omnicalculator.com/physics/trajectory-projectile-motion
+        // https://www.omnicalculator.com/physics/projectile-motion
         // Inspired by https://physics.stackexchange.com/questions/256468/model-formula-for-bouncing-ball
         game.onUpdate(() => {
             const now = game.runtime();
@@ -85,41 +90,51 @@ class Ball {
         return this._height;
     }
 
+    set x(x: number) {
+        this.sprite.setPosition(x, this.sprite.y - this.height);
+        this.shadowSprite.setPosition(x, this.shadowSprite.y);
+    }
+
     get x(): number {
         return this.shadowSprite.x;
+    }
+
+    set y(y: number) {
+        this.sprite.setPosition(this.sprite.x, y - this.height);
+        this.shadowSprite.setPosition(this.shadowSprite.x, y);
     }
 
     get y(): number {
         return this.shadowSprite.y;
     }
 
-    set z(newZ: number) {
-        this.shadowSprite.z = newZ;
-        this.sprite.z = newZ;
+    set z(z: number) {
+        this.shadowSprite.z = z;
+        this.sprite.z = z;
     }
 
     get z(): number {
         return this.shadowSprite.z;
     }
 
-    set v(newV: number) {
-        this._v = newV;
+    set v(v: number) {
+        this._v = v;
         const vc = trig.vComponents(this._v, this.angleRadian);
         this.sprite.setVelocity(vc.vx, vc.vy);
         this.shadowSprite.setVelocity(vc.vx, vc.vy);
     }
 
+    /**
+     * v is the horizontal speed in the direction of the ball
+     */
     get v(): number {
         return this._v;
     }
 
-    public setPosition(x: number, y: number, height: number): void {
-        this.height = height;
-        this.sprite.setPosition(x, y - this.height);
-        this.shadowSprite.setPosition(x, y);
-    }
-
-    public move(v: number, degrees: number): void {
+    public shoot(x: number, y: number, h: number, degrees: number, v: number) {
+        this.height = h;
+        this.x = x;
+        this.y = y;
         this.freefall = true;
         this.angleRadian = trig.toRadian(degrees);
         this.v = v;

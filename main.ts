@@ -648,7 +648,7 @@ scene.centerCameraAt(halfOf(sceneWidth), halfOf(sceneHeight));
 
 
 game.onUpdate(function () {
-    const border = 30;
+    const border = 15;
     let cameraX = scene.cameraLeft() + halfOf(scene.screenWidth());
     let cameraY = scene.cameraTop() + halfOf(scene.screenHeight());
 
@@ -680,10 +680,9 @@ game.onUpdate(() => {
             shooting = true;
             opponent.forehand();
             setTimeout(() => {
-                ball.setPosition(opponent.x - 5, opponent.y + 5, 7);
-                ball.move(randint(20, 90), randint(-45, 45));
-                opponent.resetImage();
+                ball.shoot(opponent.x - 10, opponent.y + 5, 7, randint(-45, 45), randint(20, 90));
                 shooting = false;
+                setTimeout(() => opponent.resetImage(), 100);
             }, 300);
         }
     }
