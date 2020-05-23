@@ -49,19 +49,16 @@ class Ball {
             this.t = now;
 
             // calucate the new height of the ball
-            const hNew = this.height + this.vz * dt - 0.5 * Ball.G * dt * dt;
+            this.height = Math.max(this.height + this.vz * dt - 0.5 * Ball.G * dt * dt, 0);
             // calculate new vertical velocity
             this.vz = this.vz - Ball.G * dt;
-            if (hNew <= 0) {
+            if (this.height === 0) {
                 // ball hits ground and bounces
-                this.height = 0;
                 this.leaveBounceMark();
                 // vertical velocity changes direction (-1) and is damped (RHO) by bounce
                 this.vz *= Ball.RHO * -1;
                 // horizontal velocity also is decreased because of the damping on the ground
                 this.v *= 0.8;
-            } else {
-                this.height = hNew;
             }
         });
     }
