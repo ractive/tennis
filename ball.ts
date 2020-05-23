@@ -37,7 +37,7 @@ class Ball {
         this.sprite.setFlag(SpriteFlag.Ghost, true);
         this.shadowSprite.setFlag(SpriteFlag.Ghost, true);
 
-        // https://physics.stackexchange.com/questions/256468/model-formula-for-bouncing-ball
+        // Inspired by https://physics.stackexchange.com/questions/256468/model-formula-for-bouncing-ball
         game.onUpdate(() => {
             const now = game.runtime();
             const dt = (now - this.t) / 1000;
@@ -77,10 +77,9 @@ class Ball {
         bounceSprite.z = -1;
     }
 
-    set height(h: number) {
-        //this._height = Math.max(h, 2);
-        this._height = h;
-        this.sprite.setPosition(this.shadowSprite.x, this.shadowSprite.y - this._height);
+    set height(height: number) {
+        this._height = height;
+        this.sprite.setPosition(this.shadowSprite.x, this.shadowSprite.y - this._height - 2);
     }
 
     get height(): number {

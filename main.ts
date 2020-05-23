@@ -613,38 +613,7 @@ function halfOf(v: number) {
     return v >> 1;
 }
 
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    player.up();
-});
 
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    player.serve();
-    opponent.serve();
-});
-
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (player.x < ball.x) {
-        player.forehand();
-    } else {
-        player.backhand();
-    }
-
-    if (Math.abs(player.x - ball.x) < 15 && Math.abs(player.y - ball.y) < 15 && ball.height > 3 && ball.height < 20) {
-        ball.shot();
-    }
-});
-
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    player.left();
-});
-
-controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    player.right();
-});
-
-controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    player.down();
-});
 
 scene.setBackgroundColor(7);
 
@@ -675,11 +644,11 @@ const sceneHeight = tileMapData.height() * (tileMapData.scale << 2);
 const ball = new Ball();
 const opponent = new Opponent();
 const player = new Player();
-player.placeOnTile(6, 2);
+player.placeOnTile(6, 0);
 opponent.placeOnTile(3, 2);
 scene.centerCameraAt(halfOf(sceneWidth), halfOf(sceneHeight));
-ball.setPosition(halfOf(sceneWidth), scene.cameraTop() + 20, 20);
-ball.move(90, trig.toRadian(30));
+ball.setPosition(halfOf(sceneWidth), scene.cameraTop() + 20, 10);
+ball.move(100, trig.toRadian(30));
 
 game.onUpdate(function () {
     const border = 30;
@@ -702,7 +671,7 @@ game.onUpdate(function () {
 });
 
 game.onUpdate(() => {
-    if (Math.abs(ball.v) < 2) {
+    if (Math.abs(ball.v) < -10) {
         ball.setPosition(halfOf(sceneWidth), scene.cameraTop() + 20, 20);
         ball.move(randint(20, 90), randint(-45, 45));   
     }
