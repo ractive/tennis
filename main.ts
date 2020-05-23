@@ -613,8 +613,6 @@ function halfOf(v: number) {
     return v >> 1;
 }
 
-
-
 scene.setBackgroundColor(7);
 
 const tileMapData = tiles.createTilemap(
@@ -644,11 +642,10 @@ const sceneHeight = tileMapData.height() * (tileMapData.scale << 2);
 const ball = new Ball();
 const opponent = new Opponent();
 const player = new Player();
-player.placeOnTile(6, 0);
-opponent.placeOnTile(3, 2);
+player.placeOnTile(6, 4);
+opponent.placeOnTile(5, 2);
 scene.centerCameraAt(halfOf(sceneWidth), halfOf(sceneHeight));
-ball.setPosition(halfOf(sceneWidth), scene.cameraTop() + 20, 10);
-ball.move(100, trig.toRadian(30));
+
 
 game.onUpdate(function () {
     const border = 30;
@@ -670,9 +667,29 @@ game.onUpdate(function () {
     scene.centerCameraAt(cameraX, cameraY);
 });
 
+let shooting: boolean = false;
 game.onUpdate(() => {
-    if (Math.abs(ball.v) < -10) {
-        ball.setPosition(halfOf(sceneWidth), scene.cameraTop() + 20, 20);
-        ball.move(randint(20, 90), randint(-45, 45));   
+    if (player.y > ball.y) {
+        player.z = ball.z - 1;
+    } else {
+        player.z = ball.z + 1;
+    }
+
+    if (Math.abs(ball.v) < 1 && Math.abs(ball.vz) < 2) {
+        if  (!shooting) {
+            shooting = true;
+            opponent.forehand();
+            setTimeout(() => {
+                ball.setPosition(opponent.x - 5, opponent.y + 5, 7);
+                ball.move(randint(20, 90), randint(-45, 45));
+                opponent.resetImage();
+                shooting = false;
+            }, 300);
+        }
+    }
+
+    // Check if the ball hits the net
+    if (ball.y == (6 * (tileMapData.scale << 2) - 3) && ball.height < 7) {
+        ball.v = 0;
     }
 });

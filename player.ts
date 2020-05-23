@@ -66,6 +66,12 @@ class Player extends BasePlayer implements TennisPlayer {
         controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
             player.down();
         });
+
+        game.onUpdate(function () {
+            if (!(controller.anyButton.isPressed())) {
+                this.resetImage();
+            }
+        });
     }
 
     public up() {
