@@ -18,11 +18,16 @@ class Ball {
         f f f f f f 
         . f f f f . 
     `;
+    private static readonly bounceImage: Image = img`
+        . b . b .
+        b . b . b
+        . b . b .
+    `;
 
     private readonly shadowSprite = sprites.create(Ball.shadowImage);
     private readonly sprite = sprites.create(Ball.image);
     private _height: number = 0;
-    private angle: number = 0;
+    private angleRadian: number = 0;
     public v: number = 0;
     private vz: number = 0;
     private t: number = 0;
@@ -38,14 +43,15 @@ class Ball {
             const dt = (now - this.t) / 1000;
             const vz = this.vz;
             this.t = now;
-            console.log("vz: " + vz);
-            console.log("height: " + this.height);
+            // console.log("vz: " + vz);
+            // console.log("height: " + this.height);
             if (this.freefall) {
                 const hNew = this.height + this.vz * dt - 0.5 * Ball.G * dt * dt;
-                console.log("hNew: " + hNew);
+                // console.log("hNew: " + hNew);
                 if (hNew < 0) {
                     this.height = 0;
                     this.freefall = false;
+                    this.leaveBounceMark();
                 } else {
                     this.vz = this.vz - Ball.G * dt;
                     this.height = hNew;
@@ -61,6 +67,14 @@ class Ball {
             }
             
         });
+    }
+
+    public leaveBounceMark() {
+        const bounceSprite = sprites.create(Ball.bounceImage);
+        bounceSprite.setPosition(this.x, this.y);
+        bounceSprite.setFlag(SpriteFlag.Ghost, true);
+        bounceSprite.lifespan = 300;
+        bounceSprite.z = -1;
     }
 
     set height(h: number) {
@@ -90,7 +104,7 @@ class Ball {
     public move(v: number, degrees: number): void {
         this.freefall = true;
         this.v = v;
-        this.angle = trig.toRadian(degrees);
+        this.angleRadian = trig.toRadian(degrees);
 
         this.t = game.runtime();
         this.calcV();
@@ -99,14 +113,18 @@ class Ball {
     public shot() {
         this.freefall = true;
         this.v *= 1.5;
-        this.angle -= trig.toRadian(180);
-
+        // this.angleRadian -= trig.toRadian(180);
+        this.angleRadian = trig.toRadian(180);
+        
+        // If the play hits the ball, it goes up (vz) with an angle of 20 degrees
+        this.vz = Math.min(this.v * Math.atan(trig.toRadian(20)), 20);
+        console.log("newvz: " + this.vz);
         this.t = game.runtime();
         this.calcV();
     }
 
     private calcV() {
-        const vc = trig.vComponents(this.v, this.angle);
+        const vc = trig.vComponents(this.v, this.angleRadian);
         this.sprite.setVelocity(vc.vx, vc.vy);
         this.shadowSprite.setVelocity(vc.vx, vc.vy);
     }

@@ -29,6 +29,7 @@ class Opponent extends BasePlayer implements TennisPlayer {
     constructor() {
         super(Opponent.image);
         this.sprite.setFlag(SpriteFlag.StayInScreen, false);
+        this.sprite.setFlag(SpriteFlag.Invisible, true);
         controller.moveSprite(this.sprite);
     }
 
