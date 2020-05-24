@@ -128,7 +128,7 @@ class Ball {
         this.x = x;
         this.y = y;
         this.v = v;
-        this.vz = this.v * Math.atan(trajectoryAngle.rad);
+        this.vz = v * Math.tan(trajectoryAngle.rad);
 
         const d = trajectory.range(h, trajectory.totalSpeed(v, this.vz), trajectoryAngle);
 
