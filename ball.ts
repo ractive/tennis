@@ -49,9 +49,9 @@ class Ball {
             this.t = now;
 
             // calucate the new height of the ball
-            this.height = Math.max(this.height + this.vz * dt - 0.5 * Ball.G * dt * dt, 0);
+            this.height = trajectory.height(this.height, this.vz, dt);
             // calculate new vertical velocity
-            this.vz = this.vz - Ball.G * dt;
+            this.vz = trajectory.verticalVelocity(this.vz, dt);
             if (this.height === 0) {
                 // ball hits ground and bounces
                 this.leaveBounceMark();
@@ -122,12 +122,26 @@ class Ball {
     }
 
     public shoot(x: number, y: number, h: number, degrees: number, v: number) {
+        const trajectoryAngle = 20;
         this.height = h;
         this.x = x;
         this.y = y;
         this.angleRadian = trig.toRadian(degrees);
         this.v = v;
-        this.vz = Math.min(this.v * Math.atan(trig.toRadian(20)), 20);
+        this.vz = this.v * Math.atan(trig.toRadian(trajectoryAngle));
+
+        const d = trajectory.range(h, Math.sqrt(v * v + this.vz * this.vz), trajectoryAngle);
+
+        //this.vz = Math.min(this.vz, 20);
+        
+        console.log("d: " +d);
+        const c = trig.vComponents(d, this.angleRadian);
+        console.log(c);
+        const m = sprites.create(img`
+            2
+        `);
+        m.setPosition(x + c.vx, y + c.vy);
+        m.lifespan = 3000;
         this.t = game.runtime();
     }
 
