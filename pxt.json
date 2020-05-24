@@ -13,7 +13,6 @@
         "opponent.ts",
         "player.ts",
         "tennisplayer.ts",
-        "trig.ts",
         "trajectory.ts"
     ],
     "testFiles": [

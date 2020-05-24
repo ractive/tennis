@@ -680,7 +680,7 @@ game.onUpdate(() => {
             shooting = true;
             opponent.forehand();
             setTimeout(() => {
-                ball.shoot(opponent.x - 10, opponent.y + 5, 7, randint(-45, 45), randint(89, 110));
+                ball.shoot(opponent.x - 10, opponent.y + 5, 7, trajectory.Angle.fromDeg(randint(-45, 45)), randint(50, 70));
                 shooting = false;
                 setTimeout(() => opponent.resetImage(), 100);
             }, 300);

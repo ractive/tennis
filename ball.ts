@@ -27,7 +27,7 @@ class Ball {
     private readonly shadowSprite = sprites.create(Ball.shadowImage);
     private readonly sprite = sprites.create(Ball.image);
     private _height: number = 0;
-    private angleRadian: number = 0;
+    private angle: trajectory.Angle = trajectory.Angle.fromDeg(0);
     public _v: number = 0;
     /**
      * vz is the vertical speed of the ball
@@ -109,9 +109,9 @@ class Ball {
 
     set v(v: number) {
         this._v = v;
-        const vc = trig.vComponents(this._v, this.angleRadian);
-        this.sprite.setVelocity(vc.vx, vc.vy);
-        this.shadowSprite.setVelocity(vc.vx, vc.vy);
+        const vc = trajectory.components(this._v, this.angle);
+        this.sprite.setVelocity(vc.x, vc.y);
+        this.shadowSprite.setVelocity(vc.x, vc.y);
     }
 
     /**
@@ -121,34 +121,32 @@ class Ball {
         return this._v;
     }
 
-    public shoot(x: number, y: number, h: number, degrees: number, v: number) {
-        const trajectoryAngle = 20;
+    public shoot(x: number, y: number, h: number, angle: trajectory.Angle, v: number) {
+        this.angle = angle;
+        const trajectoryAngle = trajectory.Angle.fromDeg(20);
         this.height = h;
         this.x = x;
         this.y = y;
-        this.angleRadian = trig.toRadian(degrees);
         this.v = v;
-        this.vz = this.v * Math.atan(trig.toRadian(trajectoryAngle));
+        this.vz = this.v * Math.atan(trajectoryAngle.rad);
 
-        const d = trajectory.range(h, Math.sqrt(v * v + this.vz * this.vz), trajectoryAngle);
+        const d = trajectory.range(h, trajectory.totalSpeed(v, this.vz), trajectoryAngle);
 
         //this.vz = Math.min(this.vz, 20);
         
-        console.log("d: " +d);
-        const c = trig.vComponents(d, this.angleRadian);
-        console.log(c);
+        const p = trajectory.components(d, this.angle);
         const m = sprites.create(img`
             2
         `);
-        m.setPosition(x + c.vx, y + c.vy);
+        m.setPosition(x + p.x, y + p.y);
         m.lifespan = 3000;
         this.t = game.runtime();
     }
 
     public shot(): void {
-        this.angleRadian = trig.toRadian(180);
+        this.angle.deg = 180;
         this.v *= 1.5;
-        this.vz = Math.min(this.v * Math.atan(trig.toRadian(20)), 20);
+        this.vz = Math.min(trajectory.toVerticalVelocity(this.v, trajectory.Angle.fromDeg(20)), 20);
         this.t = game.runtime();
     }
 }
