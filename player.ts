@@ -50,8 +50,10 @@ class Player extends BasePlayer implements TennisPlayer {
             }
 
             // Can the player reach the ball?
-            if (Math.abs(player.x - ball.x) < 15 && Math.abs(player.y - ball.y) < 15 && ball.height > 3 && ball.height < 20) {
+            if (Math.abs(player.x - ball.x) < 15 && Math.abs(player.y - ball.y) < 15 && ball.height > 1 && ball.height < 20) {
                 ball.shot();
+            } else {
+                console.log("Missed. player.x: " + player.x + ", ball.x:" + ball.x + ", player.y: " + player.y + ", ball.y: " + ball.y + ", ball.height: " + ball.height);
             }
         });
 

@@ -680,7 +680,7 @@ game.onUpdate(() => {
             shooting = true;
             opponent.forehand();
             setTimeout(() => {
-                ball.shoot(opponent.x - 10, opponent.y + 5, 7, trajectory.Angle.fromDeg(randint(-45, 45)), randint(50, 70));
+                ball.shoot(opponent.x - 10, opponent.y + 5, 7, trajectory.Angle.fromDeg(randint(-30, 30)), randint(70, 85));
                 shooting = false;
                 setTimeout(() => opponent.resetImage(), 100);
             }, 300);
@@ -689,6 +689,6 @@ game.onUpdate(() => {
 
     // Check if the ball hits the net
     if (ball.y == (6 * (tileMapData.scale << 2) - 3) && ball.height < 7) {
-        //ball.v = 0;
+        ball.v = 0;
     }
 });

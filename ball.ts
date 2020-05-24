@@ -136,7 +136,8 @@ class Ball {
         
         const p = trajectory.components(d, this.angle);
         const m = sprites.create(img`
-            2
+            2 2
+            2 2
         `);
         m.setPosition(x + p.x, y + p.y);
         m.lifespan = 3000;
@@ -145,8 +146,8 @@ class Ball {
 
     public shot(): void {
         this.angle.deg = 180;
-        this.v *= 1.5;
-        this.vz = Math.min(trajectory.toVerticalVelocity(this.v, trajectory.Angle.fromDeg(20)), 20);
+        this.v = this.v;
+        this.vz = Math.min(trajectory.toVerticalVelocity(this.v, trajectory.Angle.fromDeg(15)), 20);
         this.t = game.runtime();
     }
 }
